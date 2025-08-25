@@ -1,0 +1,132 @@
+:root {
+--cor-fundo: #01080E;
+--cor-principal: #0B0D20;
+--cor-secundaria: #212333;
+--cor-destaque: #2BDEFD;
+--cor-texto: #D7F9FF;
+--cor-hover: #00A6B2; /* Um tom de destaque para hover, ligeiramente diferente do original para botões */
+--borda-arredondada: 15px;
+}
+
+body {
+background-color: var(--cor-fundo);
+color: var(--cor-texto);
+font-family: 'Montserrat', sans-serif; /* Fonte moderna e legível */
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+margin: 0; /* Remove margem padrão do body */
+padding: 20px; /* Adiciona um padding para espaçamento em telas menores */
+box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura total */
+}
+
+.caixa-principal {
+background-color: var(--cor-principal);
+width: 100%; /* Ajustado para melhor responsividade inicial */
+max-width: 600px;
+text-align: center;
+padding: 40px; /* Aumentado o padding para um visual mais clean */
+border-radius: var(--borda-arredondada);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+box-sizing: border-box;
+}
+
+h1 {
+color: var(--cor-destaque);
+font-size: 2.5em; /* Tamanho maior para o título */
+margin-bottom: 30px; /* Espaçamento abaixo do título */
+text-shadow: 0 0 10px rgba(43, 222, 253, 0.6); /* Efeito de brilho */
+}
+
+.caixa-perguntas {
+font-size: 1.5em;
+margin-bottom: 20px;
+color: var(--cor-texto);
+line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+}
+
+.caixa-alternativas {
+display: flex;
+flex-direction: column;
+gap: 15px; /* Espaçamento entre os botões */
+margin-top: 30px;
+}
+
+button {
+background-color: var(--cor-secundaria);
+color: var(--cor-texto);
+border: none;
+border-radius: var(--borda-arredondada);
+padding: 15px 25px; /* Padding ajustado para botões */
+font-size: 1.1em;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease; /* Adicionada transição de transformação */
+width: 100%; /* Botões ocupam a largura total */
+}
+
+button:hover {
+background-color: var(--cor-destaque);
+color: var(--cor-principal);
+transform: translateY(-3px); /* Leve levantamento no hover */
+}
+
+.caixa-resultado {
+margin-top: 30px;
+background-color: var(--cor-secundaria);
+padding: 25px;
+border-radius: var(--borda-arredondada);
+text-align: left; /* Alinhamento do texto para o resultado */
+font-size: 1.2em;
+line-height: 1.8;
+}
+
+.texto-resultado {
+color: var(--cor-texto);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+.caixa-principal {
+padding: 30px;
+}
+
+h1 {
+font-size: 2em;
+}
+
+.caixa-perguntas {
+font-size: 1.3em;
+}
+
+button {
+padding: 12px 20px;
+font-size: 1em;
+}
+}
+
+@media (max-width: 480px) {
+.caixa-principal {
+padding: 20px;
+border-radius: 10px; /* Bordas um pouco menores em telas muito pequenas */
+}
+
+h1 {
+font-size: 1.8em;
+margin-bottom: 20px;
+}
+
+.caixa-perguntas {
+font-size: 1.1em;
+}
+
+button {
+font-size: 0.9em;
+padding: 10px 15px;
+}
+
+.caixa-resultado {
+padding: 20px;
+font-size: 1em;
+}
+}
